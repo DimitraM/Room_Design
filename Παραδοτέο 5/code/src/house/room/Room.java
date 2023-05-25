@@ -1,29 +1,43 @@
 package house.room;
-import Enums.RoomType;
-import house.room.objects.Objects;
+import java.util.ArrayList;
 
+import Enums.RoomType;
+import house.room.objects.Furniture;
+import house.room.objects.Openings;
 
 public class Room {
     private RoomType type;
-    // private Objects item;
-    //these two extend the Objects class[parent class]
-    //epipla
-    //anoigmata
-    int count=0; // counting number of items maybe
+    private ArrayList<Furniture> items; 
+    private ArrayList<Openings> doors;
 
-    public RoomType getType(){return  type;} //getter
-    //public void setType(RoomType type){  this.type=type;} //setter den xerw an xreiazetai
-
-
-    //constructor
+    //constructors
     public Room(RoomType type) {
         this.type=type;
     }
 
-    public void add(RoomType type){
-        //this method inserts new items in the room.
-        if(type==RoomType.toilet){
-            
+    public Room()
+    {
+        items = new ArrayList<Furniture>();
+        doors = new ArrayList<Openings>(); 
+    }
+
+    public void addItems(Furniture furniture)
+    {
+        items.add(furniture);
+    }
+
+    public void addOpenings(Openings opening)
+    {
+        doors.add(opening);
+    }
+
+    public RoomType getType(){return  type;} //getter
+    
+
+    public void sortOptions(RoomType type){
+        //this method sorts options in list for user to add
+        if(doors==null){
+           //show only openings firsts 
         }
         
 
