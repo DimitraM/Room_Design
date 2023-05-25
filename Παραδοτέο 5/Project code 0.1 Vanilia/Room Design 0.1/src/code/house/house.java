@@ -1,9 +1,9 @@
-package house;
-import Enums.RoomType;
-import house.room.Room;
+package code.house;
+import code.house.room.Room;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import code.*;
+
 
 
 
@@ -13,10 +13,10 @@ public class house {
 
     }
     public HashMap countRoomTypes(){
-        HashMap<RoomType, Integer> numberRoomTypes=new HashMap<RoomType,Integer>;
+        HashMap<RoomType, Integer> numberRoomTypes=new HashMap<RoomType,Integer>();
         for (Room roomIterator:roomList)
         {
-            RoomType roomTypeIterator=roomIterator.getType();
+            RoomType roomTypeIterator=roomIterator.getRoomType();
             if (numberRoomTypes.containsKey(roomTypeIterator)){
 
                 numberRoomTypes.put(roomTypeIterator,numberRoomTypes.get(roomTypeIterator)+1);
