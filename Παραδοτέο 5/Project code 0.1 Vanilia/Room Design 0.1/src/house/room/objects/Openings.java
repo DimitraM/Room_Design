@@ -1,5 +1,5 @@
 package house.room.objects;
 
-public class Openings {
+public class Openings extends Objects{
         
 }
