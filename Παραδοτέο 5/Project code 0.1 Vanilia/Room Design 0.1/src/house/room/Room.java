@@ -9,7 +9,8 @@ public class Room {
     private RoomType type;
     private ArrayList<Furniture> items; 
     private ArrayList<Openings> doors;
-
+    private ArrayList <Wall> walls; //list of walls that exist in a room
+    
     //constructors
     public Room(RoomType type) {
         this.type=type;
@@ -17,6 +18,7 @@ public class Room {
 
     public Room()
     {
+    	walls = new ArrayList<>();   //every room has a list of walls
         items = new ArrayList<Furniture>();
         doors = new ArrayList<Openings>(); 
     }
@@ -39,7 +41,34 @@ public class Room {
         if(doors==null){
            //show only openings firsts 
         }
+           //method that adds walls to the list of walls:
+    public void addWall(Wall wall){
+    
+        walls.add(wall);
+        
+    }
+   
+   //room type GETTER
+    public RoomType getType(){
+        
+        return  type;
+    
+    }
+    
+    //Walls list GETTER
+    public ArrayList<Wall> getWalls(){
+    
+        return walls;
+        
+    }
+    
+    /*public void showWalls(ArrayList list){
+        
+        
+        
+    }*/
         
 
     }
 }
+
