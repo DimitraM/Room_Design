@@ -8,6 +8,9 @@ abstract class Objects {
     private float width;
     private float length;
 
+    /* methods that exist in the domain model and we need to 
+    describe them in every subclass because this is an abstract class 
+
     public abstract Object choose_object();
     public abstract void post_restrictions();
     public abstract void check_rooms_objects();
@@ -15,4 +18,6 @@ abstract class Objects {
 
     public abstract void saveChanges();
     public abstract void deleteChanges();
+
+    */
 }
