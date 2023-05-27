@@ -39,11 +39,46 @@ public  class RoomType {
             roomTypeSet.add(new RoomType("bedroom",0,2.2,3,3
                     ,3,4.3,4.9));
 
+            roomTypeSet.add(new RoomType("toilet"))
 
 
 
         }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public float getMinimumRecommendedLength() {
+        return minimumRecommendedLength;
+    }
+
+    public float getMinimumRecommendedWidth() {
+        return minimumRecommendedWidth;
+    }
+
+    public float getMinimumRecommendedHeight() {
+        return minimumRecommendedHeight;
+    }
+
+    public float getMaximumRecommendedLength() {
+        return maximumRecommendedLength;
+    }
+
+    public float getMaximumRecommendedWidth() {
+        return maximumRecommendedWidth;
+    }
+
+    public float getMaximumRecommendedHeight() {
+        return maximumRecommendedHeight;
+    }
 }
+
+
         /*
         public  static void roomTypeFormingInitialization() {
             Scanner input=new Scanner(System.in);
