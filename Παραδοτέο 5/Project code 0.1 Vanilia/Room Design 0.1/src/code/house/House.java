@@ -10,9 +10,9 @@ import code.*;
 
 
 
-public class house {
+public class House  {
     private ArrayList<Room> roomList;
-    house(){
+    House(){
 
     }
 
@@ -36,8 +36,7 @@ public class house {
 
     public List sortRoomTypeList(){
 
-        List <RoomType> sortedList= (List<RoomType>) RoomType.roomTypeSet;
-        Map<RoomType, Integer>ExistingRooms=countRoomTypes();
+
 
 
 
