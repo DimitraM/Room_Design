@@ -80,7 +80,7 @@ public class RoomCreationScreen {
         name=scannerUserInput.nextLine();
         name=name.trim();
         if (name.isEmpty()){
-            StringJoiner joiner=new StringJoiner(" ");
+            StringJoiner joiner=new StringJoiner("-");
             for(RoomType currentRoomType:room.getRoomType()) {
                 joiner.add(currentRoomType.getName());
             }
