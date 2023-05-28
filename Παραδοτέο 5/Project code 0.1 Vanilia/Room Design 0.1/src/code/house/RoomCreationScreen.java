@@ -3,6 +3,7 @@ package code.house;
 import code.RoomType;
 import code.house.CustomRoomListSort.RoomListSort;
 import code.house.room.Room;
+import code.house.room.RoomDesigningScreen;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,7 +23,7 @@ public class RoomCreationScreen {
 
         this.nameSet=house.getAllNames();
         newRoom.setName(this.userInputRoomName());
-        
+        new RoomDesigningScreen(new Room);
 
         }
 
