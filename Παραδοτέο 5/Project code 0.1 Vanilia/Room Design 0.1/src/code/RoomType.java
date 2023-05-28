@@ -3,7 +3,9 @@ package code;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public  class RoomType {
@@ -40,10 +42,21 @@ public  class RoomType {
                     ,3,4.3,4.9));
 
             roomTypeSet.add(new RoomType("toilet"))
-
-
-
         }
+
+
+    public static RoomType getParticularRoomType(String roomTypeName){
+
+
+         for (RoomType potentialParticularRoomType:roomTypeSet){
+             if (roomTypeName.equalsIgnoreCase(potentialParticularRoomType.getName())){
+                 return potentialParticularRoomType;
+             }
+         }
+         return null;
+
+    }
+
 
     public String getName() {
         return name;
