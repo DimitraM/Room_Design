@@ -13,17 +13,17 @@ public  class RoomType {
         public static HashSet<RoomType> roomTypeSet;
         private String name;
         private int priority;
-        private float minimumRecommendedLength;
-        private float minimumRecommendedWidth;
-        private float minimumRecommendedHeight;
+        private double minimumRecommendedLength;
+        private double minimumRecommendedWidth;
+        private double minimumRecommendedHeight;
 
-        private float maximumRecommendedLength;
-        private float maximumRecommendedWidth;
-        private float maximumRecommendedHeight;
+        private double maximumRecommendedLength;
+        private double maximumRecommendedWidth;
+        private double maximumRecommendedHeight;
 
 
-        RoomType(String name,int priority,float minimumRecommendedHeight,float minimumRecommendedLength,float minimumRecommendedWidth
-        ,float maximumRecommendedHeight,float maximumRecommendedLength,float maximumRecommendedWidth){
+        RoomType(String name,int priority,double minimumRecommendedHeight,double minimumRecommendedLength,double minimumRecommendedWidth
+        ,double maximumRecommendedHeight,double maximumRecommendedLength,double maximumRecommendedWidth){
 
 
             this.priority=priority;
@@ -38,11 +38,19 @@ public  class RoomType {
 
         public static void roomTypeInitialization(){
 
-            roomTypeSet.add(new RoomType("bedroom",0,2.2,3,3
-                    ,3,4.3,4.9));
+            roomTypeSet.add(new RoomType("bedroom",0,2.8,3,3
+                    ,3.8,5,6));
 
-            roomTypeSet.add(new RoomType("toilet"));
-            roomTypeSet.add(new RoomType("living room"));
+            roomTypeSet.add(new RoomType("living room",1,2.8,3,3.5
+                    ,3.2,6,8)
+            roomTypeSet.add(new RoomType("kitchen",1,2.6,1.5,3
+            ,3.6,3.6,6));
+            roomTypeSet.add(new RoomType("bathroom",1,2.4,1.2,2.4
+            ,3,2.4,3.7));
+            roomTypeSet.add(new RoomType("office",2,2.8,3,3,
+            3.5,4.3,5));
+            roomTypeSet.add(new RoomType("Generic",99,2.8,3,3,
+                    3.5,5,5));
 
         }
 
@@ -68,27 +76,27 @@ public  class RoomType {
         return priority;
     }
 
-    public float getMinimumRecommendedLength() {
+    public double getMinimumRecommendedLength() {
         return minimumRecommendedLength;
     }
 
-    public float getMinimumRecommendedWidth() {
+    public double getMinimumRecommendedWidth() {
         return minimumRecommendedWidth;
     }
 
-    public float getMinimumRecommendedHeight() {
+    public double getMinimumRecommendedHeight() {
         return minimumRecommendedHeight;
     }
 
-    public float getMaximumRecommendedLength() {
+    public double getMaximumRecommendedLength() {
         return maximumRecommendedLength;
     }
 
-    public float getMaximumRecommendedWidth() {
+    public double getMaximumRecommendedWidth() {
         return maximumRecommendedWidth;
     }
 
-    public float getMaximumRecommendedHeight() {
+    public double getMaximumRecommendedHeight() {
         return maximumRecommendedHeight;
     }
 }
