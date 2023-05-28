@@ -7,6 +7,8 @@ abstract class Objects {
     private float height;
     private float width;
     private float length;
+    private String color; 
+    private String material; 
 
     /* methods that exist in the domain model and we need to 
     describe them in every subclass because this is an abstract class 
