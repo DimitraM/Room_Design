@@ -1,13 +1,14 @@
+package code.house.room.objects;
+
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
  *
  * @author Chrysoula
  */
-public class mainClass {
-    public static void main (String[] args)
-    {
+
        import java.awt.Color;
 import java.lang.String;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ import java.util.Scanner;
  *
  * @author Chrysoula
  */
-public class Wall extends Objects{
+public class Wall extends Objects {
 
     private String wallpaper; 
     
