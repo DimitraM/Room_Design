@@ -1,9 +1,7 @@
 package code.house;
 import code.house.room.Room;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 import code.*;
 
@@ -22,19 +20,34 @@ public class House  {
         HashMap<RoomType, Integer> numberRoomTypes=new HashMap<RoomType,Integer>();
         for (Room roomIterator:roomList)
         {
-            RoomType roomTypeIterator=roomIterator.getRoomType();
-            if (numberRoomTypes.containsKey(roomTypeIterator)){
+            ArrayList<RoomType> roomTypeListIterator=roomIterator.getRoomType();
+            for (RoomType roomTypeIterator:roomTypeListIterator) {
+                if (numberRoomTypes.containsKey(roomTypeIterator)) {
 
-                numberRoomTypes.put(roomTypeIterator,numberRoomTypes.get(roomTypeIterator)+1);
-            }
-            else{
-                numberRoomTypes.put(roomTypeIterator,1);
+                    numberRoomTypes.put(roomTypeIterator, numberRoomTypes.get(roomTypeIterator) + 1);
+                } else {
+                    numberRoomTypes.put(roomTypeIterator, 1);
+                }
             }
         }
         return  numberRoomTypes;
     }
+    public HashSet<String> getAllNames() {
+        HashSet<String> roomNameSet=new HashSet<String>();
 
-    public List sortRoomTypeList(){
+        for (Room room:roomList){
+
+            roomNameSet.add(room.getName());
+
+        }
+        return  roomNameSet;
+    }
+
+
+    public void addRoom(Room room){
+
+        this.roomList.add(room);
+    }
 
 
 
