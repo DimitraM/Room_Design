@@ -1,0 +1,9 @@
+CLASS DIAGRAM
+
+-------------------
+
+ROOM
+
+-> Arraylist items
+-> Arraylist openings
+
