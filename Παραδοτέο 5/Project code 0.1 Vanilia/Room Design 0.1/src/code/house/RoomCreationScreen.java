@@ -21,7 +21,8 @@ public class RoomCreationScreen {
         Room newRoom=new Room(house,userRoomTypeChoice);
 
         this.nameSet=house.getAllNames();
-
+        newRoom.setName(this.userInputRoomName());
+        
 
         }
 
