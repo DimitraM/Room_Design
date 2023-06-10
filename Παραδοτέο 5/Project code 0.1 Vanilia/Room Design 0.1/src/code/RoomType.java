@@ -13,17 +13,17 @@ public  class RoomType {
         public static HashSet<RoomType> roomTypeSet;
         private String name;
         private int priority;
-        private double minimumRecommendedLength;
-        private double minimumRecommendedWidth;
-        private double minimumRecommendedHeight;
+        private float minimumRecommendedLength;
+        private float minimumRecommendedWidth;
+        private float minimumRecommendedHeight;
 
-        private double maximumRecommendedLength;
-        private double maximumRecommendedWidth;
-        private double maximumRecommendedHeight;
+        private float maximumRecommendedLength;
+        private float maximumRecommendedWidth;
+        private float maximumRecommendedHeight;
 
 
-        RoomType(String name,int priority,double minimumRecommendedHeight,double minimumRecommendedLength,double minimumRecommendedWidth
-        ,double maximumRecommendedHeight,double maximumRecommendedLength,double maximumRecommendedWidth){
+        RoomType(String name,int priority,float minimumRecommendedHeight,float minimumRecommendedLength,float minimumRecommendedWidth
+        ,float maximumRecommendedHeight,float maximumRecommendedLength,float maximumRecommendedWidth){
 
 
             this.priority=priority;
@@ -76,27 +76,27 @@ public  class RoomType {
         return priority;
     }
 
-    public double getMinimumRecommendedLength() {
+    public float getMinimumRecommendedLength() {
         return minimumRecommendedLength;
     }
 
-    public double getMinimumRecommendedWidth() {
+    public float getMinimumRecommendedWidth() {
         return minimumRecommendedWidth;
     }
 
-    public double getMinimumRecommendedHeight() {
+    public float getMinimumRecommendedHeight() {
         return minimumRecommendedHeight;
     }
 
-    public double getMaximumRecommendedLength() {
+    public float getMaximumRecommendedLength() {
         return maximumRecommendedLength;
     }
 
-    public double getMaximumRecommendedWidth() {
+    public float getMaximumRecommendedWidth() {
         return maximumRecommendedWidth;
     }
 
-    public double getMaximumRecommendedHeight() {
+    public float getMaximumRecommendedHeight() {
         return maximumRecommendedHeight;
     }
 }

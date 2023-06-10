@@ -1,21 +1,28 @@
 package code.house.room;
+import code.house.room.objects.*;
 
 import code.RoomType;
 import code.house.House;
 
+import code.house.room.objects.Wall;
+import code.house.room.objects.Furniture;
+import code.house.room.objects.Corner;
+import code.house.room.objects.Op
 import java.util.ArrayList;
 
 public class Room {
+    private House house;
     private ArrayList<RoomType> type;
     private String name;
-
+    private ArrayList<Furniture> furnitures;
+    private ArrayList<Corner> corners;
+    private ArrayList<Opening> openings;
+    private ArrayList<Wall> walls;
     public Room(House house, ArrayList<RoomType> type) {
-
-
-        this.house - house;
+        this.house = house;
         this.type = type;
-        items = new ArrayList<Furniture>();
-        doors = new ArrayList<Openings>();
+        this.furnitures = new ArrayList<Furniture>();
+
     }
 
     public ArrayList<RoomType> getRoomType() {
@@ -47,8 +54,17 @@ public class Room {
 
     }
     public ArrayList<Wall> getWalls(){
-
         return walls;
+    }
+    public void addWall(Wall wall){
+        this.walls.add(wall);
+    }
+    public ArrayList<Corner> getCorners(){
 
+        return this.corners;
+    }
+
+    public void addCorner(Corner corner){
+        this.corners.add(corner);
     }
 }
