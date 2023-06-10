@@ -34,6 +34,7 @@ public class Wall extends Objects {
         this.material = material;
         this.wallpaper = wallpaper;
         this.corners.add(corner);
+        room.addWall(this);
     }
 
     //Wall constructor when we  know the  size of the wall at the start,so we create both corners from the starts
@@ -86,7 +87,7 @@ public class Wall extends Objects {
             }
 
         }
-
+    room.addWall(this);
     }
     //to add the second corner of the wall, return false if the wall already has two corners
     public boolean setCorner(Corner corner){

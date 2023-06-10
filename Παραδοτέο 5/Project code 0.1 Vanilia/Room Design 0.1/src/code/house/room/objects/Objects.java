@@ -16,7 +16,8 @@ public abstract class Objects {
     protected String material; 
 
     protected Room room;
-    protected Objects(float length, float width, float height){
+    protected Objects(Room room,float length, float width, float height){
+        this.room=room;
         this.length=length;
         this.width=width;
         this.height=height;
