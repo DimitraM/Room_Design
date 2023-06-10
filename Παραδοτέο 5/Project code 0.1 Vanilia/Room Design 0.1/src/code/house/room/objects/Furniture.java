@@ -1,4 +1,7 @@
-package house.room.objects;
+package code.house.room.objects;
+
+import code.house.room.objects.Objects;
+
 
 public class Furniture extends Objects {
 

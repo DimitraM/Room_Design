@@ -1,7 +1,8 @@
 package code.house.room.objects;
-
+import code.house.room.Room;
+import code.house.room.objects.Objects;
+import code.house.room.objects.Corner;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -20,23 +21,85 @@ import java.util.Scanner;
 public class Wall extends Objects {
 
     private String wallpaper; 
-    
-    
-    //Wall contructor
-    public Wall(String color,String material,String wallpaper, float width, float length, float height){
-        
+
+    private String color;
+    private String material;
+
+    private float height;
+    private ArrayList<Corner> corners;
+    //Wall constructor when we don't know the  size of the wall at the start
+    public Wall(Room room,String color,String material,String wallpaper,Corner corner){
+        super(room);
         this.color = color;
         this.material = material;
         this.wallpaper = wallpaper;
-        this.width=width;
-        this.length=length;
-        this.height=height;
+        this.corners.add(corner);
     }
 
-    public Wall(){
+    //Wall constructor when we  know the  size of the wall at the start,so we create both corners from the starts
+    public Wall(Room room, String color, String material, String wallpaper, float length, float width, String wallToBeCreated) {
+        super(room);
+        this.color = color;
+        this.material = material;
+        this.wallpaper = wallpaper;
+
+        ArrayList<Float> creatingSides = new ArrayList<Float>();
+
+        //We check if we want to create the wall of the x axis or y axis
+        if (wallToBeCreated.equals("length"))//x axis
+        {
+
+            creatingSides.add(length/2);
+            creatingSides.add(-length/2);
+        //Create the wall at the y axis, using the width to take distance from the center
+        }
+        else if (wallToBeCreated.equals("width"))
+        {
+            creatingSides.add(width/2);
+            creatingSides.add(-width/2);
+        }
+        float distanceFromExistingCorner;
+        for (float side:creatingSides){
+            for (Corner existingCorner:room.getCorners()){
+               if (wallToBeCreated.equals("length")){
+                   distanceFromExistingCorner=existingCorner.getDistance(side,width);
+               }
+               else if (wallToBeCreated.equals("width")){
+                   distanceFromExistingCorner=existingCorner.getDistance(width,side);
+               }
+                if (distanceFromExistingCorner<0.06 && existingCorner.isNotFull())//if an existing corner is less than 6 centimetres in distance,
+                                                // and doesn't have already two walls,add the existing corner and don't create new corner
+                {
+                    corners.add(existingCorner);
+                    creatingSides.remove(side);
+                    break;
+                }
+
+            }
+        }
+        for (float side:creatingSides){
+            if (wallToBeCreated.equals("length")){
+                corners.add(new Corner(side,width,this));
+            }
+            else (wallToBeCreated.equals("width")){
+                corners.add(new Corner(length,side,this));
+            }
+
+        }
+
     }
-    
-     //Wallpaper getter, setter
+    //to add the second corner of the wall, return false if the wall already has two corners
+    public boolean setCorner(Corner corner){
+        if (corners.size()<2){
+            corners.add(corner);
+            return true;
+        }
+        else return false;
+
+    }
+
+
+    //Wallpaper getter, setter
     public String getWallpaper()
     {
         return wallpaper;
@@ -57,14 +120,18 @@ public class Wall extends Objects {
     public void chooseWallpiece(Wall x, Room room) {
         System.out.println("Choose the piece of the wall you want to edit. /n Starting point: "); 
         
-        Scanner myscannerStart = new Scanner(System.in);     
-        float startingPoint = myscannerStart.nextFloat();
-        
+        Scanner myscannerStart = new Scanner(System.in);
+        float startingPoint[]=new float[3];
+        for (int i=0;myscannerStart.hasNext();i++) {
+             startingPoint[i]= myscannerStart.nextFloat();
+        }
         
         System.out.println("/n Ending point: "); 
         Scanner myscannerEnd = new Scanner(System.in);     
-        float endingPoint = myscannerEnd.nextFloat();
-        
+        float endingPoint[] = new float[3];
+        for (int i=0;myscannerEnd.hasNext();i++) {
+            endingPoint[i]= myscannerEnd.nextFloat();
+        }
         if (startingPoint==0 && endingPoint == x.getLength()){
             System.out.println("Whole wall selected");
             //we need to make getFurniture()
