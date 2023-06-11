@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Wall.java
 package code.house.room.objects;
 import code.house.room.Room;
 import code.house.room.objects.Objects;
@@ -16,10 +17,19 @@ import java.util.Scanner;
 
 import static java.lang.Math.abs;
 
+=======
+package house.room.objects;
+
+import java.awt.Color;
+import java.lang.String;
+import java.util.Scanner;
+
+>>>>>>> 58c92ea2 (code combined):Παραδοτέο 5/Project code 0.1 Vanilia/Room Design 0.1/src/house/room/objects/Wall.java
 /**
  *
  * @author Chrysoula
  */
+<<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Wall.java
 public class Wall extends Objects {
 
     private String wallpaper; 
@@ -193,6 +203,38 @@ public class Wall extends Objects {
     }
 
 
+=======
+public class Wall extends Objects{
+    
+    private String color; 
+    private String material; 
+    private String wallpaper; 
+    
+   
+    //Wall contructor
+    public Wall(String color,String material,String wallpaper){
+        
+        this.color = color;
+        this.material = material;
+        this.wallpaper = wallpaper;
+    }
+
+    
+    
+    /*****GETTERS AND SETTERS FOR PRIVATE VARIABLES*****/
+    //Color
+    public String getColor()
+    {
+        return color;
+    }
+    
+    public void setColor(String newColor)
+    {
+        this.color = newColor;
+    }
+    
+     //Wallpaper
+>>>>>>> 58c92ea2 (code combined):Παραδοτέο 5/Project code 0.1 Vanilia/Room Design 0.1/src/house/room/objects/Wall.java
     public String getWallpaper()
     {
         return wallpaper;
@@ -202,6 +244,7 @@ public class Wall extends Objects {
     {
         this.material = newWallpaper;
     }
+<<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Wall.java
 
 
 
@@ -322,3 +365,21 @@ public class Wall extends Objects {
     }
 
 }
+=======
+    
+    //Material
+    public String getMaterial()
+    {
+        return material;
+    }
+    
+    public void setMaterial(String newMaterial)
+    {
+        this.material = newMaterial;
+    }
+    
+        
+       
+    }
+
+>>>>>>> 58c92ea2 (code combined):Παραδοτέο 5/Project code 0.1 Vanilia/Room Design 0.1/src/house/room/objects/Wall.java

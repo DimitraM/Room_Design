@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Objects.java
 package code.house.room.objects;
 
 import code.house.room.Room;
@@ -135,5 +136,10 @@ public abstract class Objects {
 
     public Room getRoom(){return room;}
 
+=======
+package house.room.objects;
+
+public class Objects {
+>>>>>>> 58c92ea2 (code combined):Παραδοτέο 5/Project code 0.1 Vanilia/Room Design 0.1/src/house/room/objects/Objects.java
 
 }
