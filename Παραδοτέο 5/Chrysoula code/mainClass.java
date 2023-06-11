@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import house.room.Room;
+import house.room.objects.Wall;
+
 
 /**
  *
