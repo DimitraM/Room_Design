@@ -57,7 +57,11 @@ public class RoomPlan {
                 }
                 positionChoosed[3]=0;
                 startingPositionChoice(positionChoosed);
+<<<<<<< HEAD
 
+=======
+                if ()
+>>>>>>> 6a885403 (telikος κώδικας)
         }
 
     }
