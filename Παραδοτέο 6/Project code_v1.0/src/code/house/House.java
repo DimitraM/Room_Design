@@ -11,24 +11,26 @@ import code.*;
 
 
 public class Ηouse {
-    private ArrayList<Room> roomList;
+
+    private ArrayList<Room> roomList; //house saves all the rooms in this list
     Ηouse(){
 
     }
 
 
+    //Count all the different roomTypes and their number of their apperances at the house
 
     public HashMap countRoomTypes(){
         HashMap<RoomType, Integer> numberRoomTypes=new HashMap<RoomType,Integer>();
-        for (Room roomIterator:roomList)
-        {
-            RoomType roomTypeIterator=roomIterator.getRoomType();
-            if (numberRoomTypes.containsKey(roomTypeIterator)){
+        //We use 2 iterators to take multiple roomType
+        for (Room roomIterator:roomList) {
+            for (RoomType roomTypeIterator : roomIterator.getRoomType()) {
+                if (numberRoomTypes.containsKey(roomTypeIterator)) {
 
-                numberRoomTypes.put(roomTypeIterator,numberRoomTypes.get(roomTypeIterator)+1);
-            }
-            else{
-                numberRoomTypes.put(roomTypeIterator,1);
+                    numberRoomTypes.put(roomTypeIterator, numberRoomTypes.get(roomTypeIterator) + 1);
+                } else {
+                    numberRoomTypes.put(roomTypeIterator, 1);
+                }
             }
         }
         return  numberRoomTypes;

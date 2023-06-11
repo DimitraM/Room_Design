@@ -35,7 +35,7 @@ public  class RoomType {
             this.maximumRecommendedWidth=maximumRecommendedWidth;
             this.maximumRecommendedLength=maximumRecommendedLength;
         }
-        //We run this method at the main class in order to set the main class
+        //We run this method at the main class in order to set the predetermines values into distinct objects
         public static void roomTypeInitialization(){
 
             roomTypeSet.add(new RoomType("bedroom",0, 2.8F, 3F, 3F
@@ -54,7 +54,7 @@ public  class RoomType {
 
         }
 
-
+        //find a room type based of the String name given at the parameter
     public static RoomType getParticularRoomType(String roomTypeName){
 
 
