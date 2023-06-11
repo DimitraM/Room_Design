@@ -10,9 +10,9 @@ import code.*;
 
 
 
-public class house {
+public class Ηouse {
     private ArrayList<Room> roomList;
-    house(){
+    Ηouse(){
 
     }
 
