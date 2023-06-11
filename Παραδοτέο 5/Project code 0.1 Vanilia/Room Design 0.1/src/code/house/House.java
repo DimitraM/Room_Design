@@ -1,16 +1,18 @@
 package code.house;
 import code.house.room.Room;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import code.*;
 
 
 
 
-public class House  {
+public class house {
     private ArrayList<Room> roomList;
-    House(){
+    house(){
 
     }
 
@@ -20,36 +22,22 @@ public class House  {
         HashMap<RoomType, Integer> numberRoomTypes=new HashMap<RoomType,Integer>();
         for (Room roomIterator:roomList)
         {
-            ArrayList<RoomType> roomTypeListIterator=roomIterator.getRoomType();
-            for (RoomType roomTypeIterator:roomTypeListIterator) {
-                if (numberRoomTypes.containsKey(roomTypeIterator)) {
+            RoomType roomTypeIterator=roomIterator.getRoomType();
+            if (numberRoomTypes.containsKey(roomTypeIterator)){
 
-                    numberRoomTypes.put(roomTypeIterator, numberRoomTypes.get(roomTypeIterator) + 1);
-                } else {
-                    numberRoomTypes.put(roomTypeIterator, 1);
-                }
+                numberRoomTypes.put(roomTypeIterator,numberRoomTypes.get(roomTypeIterator)+1);
+            }
+            else{
+                numberRoomTypes.put(roomTypeIterator,1);
             }
         }
         return  numberRoomTypes;
     }
-    public HashSet<String> getAllNames() {
-        HashSet<String> roomNameSet=new HashSet<String>();
 
-        for (Room room:roomList){
+    public List sortRoomTypeList(){
 
-            roomNameSet.add(room.getName());
-
-        }
-        return  roomNameSet;
-    }
-
-
-    public void addRoom(Room room){
-
-        this.roomList.add(room);
-    }
-
-
+        List <RoomType> sortedList= (List<RoomType>) RoomType.roomTypeSet;
+        Map<RoomType, Integer>ExistingRooms=countRoomTypes();
 
 
 
