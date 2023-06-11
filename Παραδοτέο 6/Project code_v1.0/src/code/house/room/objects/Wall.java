@@ -17,6 +17,7 @@ import java.util.Scanner;
 
 import static java.lang.Math.abs;
 
+<<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Wall.java
 =======
 package house.room.objects;
 
@@ -25,6 +26,8 @@ import java.lang.String;
 import java.util.Scanner;
 
 >>>>>>> 58c92ea2 (code combined):Παραδοτέο 5/Project code 0.1 Vanilia/Room Design 0.1/src/house/room/objects/Wall.java
+=======
+>>>>>>> e5bff795 (telikος κώδικας):Παραδοτέο 6/Project code 1.0/src/code/house/room/objects/Wall.java
 /**
  *
  * @author Chrysoula
@@ -203,6 +206,7 @@ public class Wall extends Objects {
     }
 
 
+<<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Wall.java
 =======
 public class Wall extends Objects{
     
@@ -235,6 +239,8 @@ public class Wall extends Objects{
     
      //Wallpaper
 >>>>>>> 58c92ea2 (code combined):Παραδοτέο 5/Project code 0.1 Vanilia/Room Design 0.1/src/house/room/objects/Wall.java
+=======
+>>>>>>> e5bff795 (telikος κώδικας):Παραδοτέο 6/Project code 1.0/src/code/house/room/objects/Wall.java
     public String getWallpaper()
     {
         return wallpaper;
@@ -245,6 +251,9 @@ public class Wall extends Objects{
         this.material = newWallpaper;
     }
 <<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Wall.java
+<<<<<<< HEAD:Παραδοτέο 6/Project code_v1.0/src/code/house/room/objects/Wall.java
+=======
+>>>>>>> e5bff795 (telikος κώδικας):Παραδοτέο 6/Project code 1.0/src/code/house/room/objects/Wall.java
 
 
 
