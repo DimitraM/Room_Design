@@ -35,22 +35,22 @@ public  class RoomType {
             this.maximumRecommendedWidth=maximumRecommendedWidth;
             this.maximumRecommendedLength=maximumRecommendedLength;
         }
-
+        //We run this method at the main class in order to set the main class
         public static void roomTypeInitialization(){
 
-            roomTypeSet.add(new RoomType("bedroom",0, 2.8,3,3
-                    ,3.8,5,6));
+            roomTypeSet.add(new RoomType("bedroom",0, 2.8F, 3F, 3F
+                    , 3.8F,5,6));
 
-            roomTypeSet.add(new RoomType("living room",1,2.8,3,3.5
-                    ,3.2,6,8);
-            roomTypeSet.add(new RoomType("kitchen",1,2.6,1.5,3
-            ,3.6,3.6,6));
-            roomTypeSet.add(new RoomType("bathroom",1,2.4,1.2,2.4
-            ,3,2.4,3.7));
-            roomTypeSet.add(new RoomType("office",2,2.8,3,3,
-            3.5,4.3,5));
-            roomTypeSet.add(new RoomType("Generic",99,2.8,3,3,
-                    3.5,5,5));
+            roomTypeSet.add(new RoomType("living room",1,2.8F,3
+                    ,3.5F,3.2F,6,8);
+            roomTypeSet.add(new RoomType("kitchen",1,2.6f,1.5F,3
+            ,3.6F,3.6F,6F));
+            roomTypeSet.add(new RoomType("bathroom",1,2.4f,1.2f,2.4f
+            ,3,2.4f,3.7f));
+            roomTypeSet.add(new RoomType("office",2,2.8f,3,3,
+            3.5f,4.3f,5));
+            roomTypeSet.add(new RoomType("Generic",99,2.8f,3,3,
+                    3.5f,5,5));
 
         }
 
