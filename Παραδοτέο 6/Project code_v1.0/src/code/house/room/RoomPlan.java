@@ -57,7 +57,15 @@ public class RoomPlan {
                 }
                 positionChoosed[3]=0;
                 startingPositionChoice(positionChoosed);
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                if ()
+>>>>>>> 6a885403 (telikος κώδικας)
+=======
+                if ()
+>>>>>>> refs/remotes/origin/Dimitra
         }
 
     }
