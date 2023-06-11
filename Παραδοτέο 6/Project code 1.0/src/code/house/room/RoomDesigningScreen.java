@@ -147,8 +147,16 @@ public class RoomDesigningScreen {
                 }
             }
             roomPlan.showcaseDrawingPoints(lackingCorners);
-
+            if (amountOfWalls>2){
+                System.out.println("Write yes if you want to stop drawing the walls");
+                Scanner inputScanner=new Scanner(System.in);
+                String input=inputScanner.nextLine();
+                if (input.equalsIgnoreCase('yes')){
+                    userContinuing=false;
+                }
+            }
         }
+        setWallsHeight();
     }
 
 

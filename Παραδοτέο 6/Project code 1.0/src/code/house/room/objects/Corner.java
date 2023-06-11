@@ -30,8 +30,25 @@ public class Corner extends Objects{
         return walls.size() == 0;
 
     }
+    public void deleteCorner(){
 
+        for (Wall wallAffected:this.walls){
+            if (wallAffected.getCorners().contains(this)) {
+                wallAffected.emptyWallPoints();
+                //delete all the occurances of the corner
+                wallAffected.getCorners().remove(this);
+            }
+        }
+        room.getCorners().remove(this);
+    }
     public ArrayList<Wall> getWalls() {
         return walls;
+    }
+    public boolean addWall(Wall newWall){
+       if (walls.size()<2){
+           this.walls.add(newWall);
+
+       }
+
     }
 }
