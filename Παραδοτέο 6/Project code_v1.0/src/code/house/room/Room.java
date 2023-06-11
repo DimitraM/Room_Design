@@ -7,7 +7,7 @@ import code.house.House;
 import code.house.room.objects.Wall;
 import code.house.room.objects.Furniture;
 import code.house.room.objects.Corner;
-import code.house.room.objects.Op
+import code.house.room.objects.
 import java.util.ArrayList;
 
 public class Room {

@@ -14,6 +14,8 @@ import java.util.Scanner;
 import java.lang.String;
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
+
 /**
  *
  * @author Chrysoula
@@ -27,6 +29,8 @@ public class Wall extends Objects {
 
     private float height;
     private ArrayList<Corner> corners;
+    private float[][] wallPoints;
+    private String axis;
     //Wall constructor when we don't know the  size of the wall at the start
     public Wall(Room room,String color,String material,String wallpaper,Corner corner){
         super(room);
@@ -87,12 +91,15 @@ public class Wall extends Objects {
             }
 
         }
+        setWallParts()
     room.addWall(this);
     }
     //to add the second corner of the wall, return false if the wall already has two corners
-    public boolean setCorner(Corner corner){
+
+    public boolean addCorner(Corner corner){
         if (corners.size()<2){
             corners.add(corner);
+            corner.
             return true;
         }
         else return false;
@@ -113,7 +120,79 @@ public class Wall extends Objects {
         }
         room.getWalls().remove(this);
     }
-    //Wallpaper getter, setter
+
+    public void emptyWallPoints() {
+        this.wallPoints = null;
+    }
+
+    private void setWallParts(){
+        //Find the axis where the wall is sprawing. We can only have orthodoxical walls
+
+        float x_axis_distance=abs(corners.get(0).getLength()-corners.get(1).getLength());
+        float y_axis_distance=abs(corners.get(0).getWidth()-corners.get(1).getWidth());
+        //the axis where it does change its value, it becomes the axis of the wall
+        if (x_axis_distance!=0 && y_axis_distance==0){
+            axis="x-axis";
+        }
+        else if(x_axis_distance==0 && y_axis_distance!=0){
+
+            axis="y-axis";
+        }
+        else {
+            //Wall is a diagonal not a orthodoxical wall
+            axis="both-axis";
+        }
+        float bigger_number;
+        float smaller_number;
+        switch (axis){
+
+            case "x-axis":
+                width=corners.get(0).getWidth();
+                if (corners.get(0).getLength()>corners.get(1).getLength()){
+
+                    bigger_number=corners.get(0).getLength();
+                    smaller_number=corners.get(1).getLength();
+                }
+                else{
+                    bigger_number=corners.get(1).getLength();
+                    smaller_number=corners.get(0).getLength();
+                }
+                wallPoints=new float[(int)(x_axis_distance*100)][3];
+                for (float i=smaller_number;i<=bigger_number;i=(float)(i+0.01)){
+
+                    wallPoints[(int)(i*100)]= new float[]{i, width, 0};
+
+                }
+
+                break;
+            case "y-axis":
+                length=corners.get(0).getLength();
+                if (corners.get(0).getWidth()>corners.get(1).getWidth()){
+
+                    bigger_number=corners.get(0).getWidth();
+                    smaller_number=corners.get(1).getWidth();
+                }
+                else{
+                    bigger_number=corners.get(1).getWidth();
+                    smaller_number=corners.get(0).getWidth();
+                }
+                wallPoints=new float[(int)(x_axis_distance*100)][3];
+                for (float i=smaller_number;i<=bigger_number;i=(float)(i+0.01)){
+                    wallPoints[(int)(i*100)]= new float[]{getLength(), i, 0};
+                }
+                break;
+        }
+
+
+    }
+
+
+
+    public String getAxis() {
+        return axis;
+    }
+
+
     public String getWallpaper()
     {
         return wallpaper;
@@ -123,7 +202,9 @@ public class Wall extends Objects {
     {
         this.material = newWallpaper;
     }
-    
+
+
+
     @Override
     public String toString() {
         return "Wall{" + "color=" + color + ", material=" + material + ", wallpaper=" + wallpaper + '}';
@@ -202,6 +283,10 @@ public class Wall extends Objects {
         case 4:
             //changeWallStructure(selectedWall);
         }
+    }
+
+    public float[][] getWallPoints() {
+        return wallPoints;
     }
 
     public ArrayList<Corner> getCorners() {

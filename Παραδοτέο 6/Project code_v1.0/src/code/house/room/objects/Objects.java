@@ -4,8 +4,7 @@ import code.house.room.Room;
 
 import java.text.DecimalFormat;
 
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.*;
 
 public abstract class Objects {
     protected float[] position; //syntetagmenes x, y, z enos antikeimenoy
@@ -26,7 +25,7 @@ public abstract class Objects {
     protected Objects(Room room){
         this.room=room;
     }
-    //Count the distance of the object relative to an another object,for a plentiful of reasons
+    //Count the distance of the object relative to an another object,Euklidean reason
     public float getDistance(Objects object){
         float distance;
         DecimalFormat df = new DecimalFormat("0.00");
@@ -52,9 +51,31 @@ public abstract class Objects {
         distance=(float)sqrt(pow(this.length-length,2)+pow(this.width-width,2));
         return Float.valueOf(df.format(distance));
     }
+    //Manhattan distance calculates the distance between two points based of the axis, it cannot calculate diagonally
+    public float getManhattanDistance(Objects object){
+        float distance;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //distance is equal to squarte root of (x-x1)^2+(y-y1)^2+(z-z1)^2
+        distance=(float)abs(this.length-object.getLength())+abs(this.width-object.getWidth())+abs(this.height-object.getHeight()));
+        return Float.valueOf(df.format(distance));
+    }
+    public float getManhattanDistance(float length,float width,float height){
+        float distance;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //distance is equal to squarte root of (x-x1)^2+(y-y1)^2+(z-z1)^2
+        distance=(float)abs(this.length-length)+abs(this.width-width)+abs(this.height-height);
+        return Float.valueOf(df.format(distance));
+    }
+    public float getManhattanDistance(float length,float width){
+        float distance;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //distance is equal to squarte root of (x-x1)^2+(y-y1)^2+(z-z1)^2
+        distance=(float)abs(this.length-length)+abs(this.width-width) ;
+        return Float.valueOf(df.format(distance));
+    }
 
 
-    
+
     /*****GETTERS AND SETTERS*****/
     public float[] getPosition() {
         return position;
