@@ -57,7 +57,7 @@ public class RoomPlan {
                 }
                 positionChoosed[3]=0;
                 startingPositionChoice(positionChoosed);
-                if ()
+
         }
 
     }
