@@ -1,4 +1,4 @@
-package com.mycompany.roomdesign;
+package house.room.objects;
 
 import java.awt.Color;
 import java.lang.String;
@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author Chrysoula
  */
-public class Wall {
+public class Wall extends Objects{
     
     private String color; 
     private String material; 

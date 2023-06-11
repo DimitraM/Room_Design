@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import Enums.RoomType;
 import house.room.objects.Furniture;
 import house.room.objects.Openings;
+import house.room.objects.Wall;
 
 public class Room {
     private RoomType type;
@@ -33,6 +34,11 @@ public class Room {
         doors.add(opening);
     }
 
+    //method that adds walls to the list of walls:
+    public void addWall(Wall wall){
+        walls.add(wall);
+    }
+
     public RoomType getType(){return  type;} //getter
     
 
@@ -41,18 +47,6 @@ public class Room {
         if(doors==null){
            //show only openings firsts 
         }
-           //method that adds walls to the list of walls:
-    public void addWall(Wall wall){
-    
-        walls.add(wall);
-        
-    }
-   
-   //room type GETTER
-    public RoomType getType(){
-        
-        return  type;
-    
     }
     
     //Walls list GETTER
@@ -68,7 +62,5 @@ public class Room {
         
     }*/
         
-
-    }
 }
 
